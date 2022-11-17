@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<div class="text-center">
+
+    <!--AÑADIMOS LINK EN LA VISTA-->
+    @Html.ActionLink("Lista de Usuarios", "ListaUsuarios")
+
+    <br>
+
+    @for (var i = 0; i < 5; i++)
+    {
+        <p>Prueba @(i + 1)</p>
+    }
+
+    <!--
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    -->
+</div>

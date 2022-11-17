@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "listaUsuarios";
+}
+
+<h1>EJEMPLO DE TRANSICION ENTRE VISTA RAZOR.</h1>
+<h2>LISTA USUARIOS</h2>
+
+<!--Con esta etiqueta declaramos el formulario-->
+@using (Html.BeginForm()){
+
+    <!--Esta etiqueta name es muy importante ya que con ella la referenciaremos en el controlador para obtener el valor-->
+    <select name="selUsuario">
+        @foreach (string usuario in Model)
+        {
+            <option>@usuario</option>
+        }
+    </select>
+    
+    <br />
+    <br />
+
+    if (ViewBag.Nombre != null)
+    {    
+        <!--Con ViewBag recuperamos la informacion del controlador-->
+        <h4 style="color:blue">Usuario Seleccionado: @TempData["listaUsuarios"]</h4>
+    }
+
+    <br />
+    <br />
+
+    <button class="btn btn-primary" type="submit">SELECCIONAR USUARIO</button>
+}
+<br />
+<br />
+
+<h3>EJEMPLOS DE COMUNICACION</h3>
+<p>@ViewBag.Prueba</p>
+<p>@TempData["Prueba2"]</p>
+<!--Para recuperar los datos de la sesion-->
+<p>@Context.Session.GetString("prueba3")</p>
+<p>@ViewData["Prueba4"]</p>
+
+
+@Html.ActionLink("Volver", "Index")
