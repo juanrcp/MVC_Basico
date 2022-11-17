@@ -6,6 +6,13 @@
 <h1>EJEMPLO DE TRANSICION ENTRE VISTA RAZOR.</h1>
 <h2>LISTA USUARIOS</h2>
 
+<ul>
+    @foreach (string usuario in Model)
+    {
+        <li>@usuario</li>
+    }
+</ul>
+
 <!--Con esta etiqueta declaramos el formulario-->
 @using (Html.BeginForm()){
 
